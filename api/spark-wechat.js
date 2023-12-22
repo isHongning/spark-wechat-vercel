@@ -200,10 +200,10 @@ module.exports = async function (request, response) {
   const done = new Promise((resolve) => {
     connect.on('message', (msg) => {
       const data = JSON.parse(msg);
-      console.log('收到最终结果data：',data);
       const payload = data.payload;
       if(!payload){
         answer += "您好"
+        console.log('收到最终结果data：',data);
         resolve();
         return;
       }
