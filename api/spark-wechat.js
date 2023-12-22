@@ -205,6 +205,7 @@ module.exports = async function (request, response) {
       if(!payload){
         answer += "您好"
         resolve();
+        return;
       }
       const choices = payload.choices;
       const header = data.header;
