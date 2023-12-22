@@ -202,7 +202,7 @@ module.exports = async function (request, response) {
       const data = JSON.parse(msg);
       const payload = data.payload;
       if(!payload){
-        answer += "您好"
+        answer = ("您好," + data)
         console.log('收到最终结果data：',data);
         resolve();
         return;
