@@ -197,10 +197,16 @@ module.exports = async function (request, response) {
 
   let answer = '';
   let timeout;
+  let count = 0;
   const done = new Promise((resolve) => {
     connect.on('message', (msg) => {
       const data = JSON.parse(msg);
+      console.log(data);
       const payload = data.payload;
+      count++;
+      if(!payload && count == 50){
+        resolve();
+      }
       const choices = payload.choices;
       const header = data.header;
       const code = header.code;
