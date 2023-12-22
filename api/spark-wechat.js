@@ -202,8 +202,8 @@ module.exports = async function (request, response) {
       const data = JSON.parse(msg);
       const payload = data.payload;
       if(!payload){
-        answer = ("您好," + data)
-        console.log('收到最终结果data：',data);
+        answer = ("您好," + msg)
+        console.log('收到最终结果data：',msg);
         resolve();
         return;
       }
